@@ -24,4 +24,4 @@ jobs:
           git status
           git commit -m "changes for $(date +%F)"
           git status
-          git push -f
+          git push --set-upstream origin master
