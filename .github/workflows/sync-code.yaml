@@ -15,10 +15,10 @@ jobs:
           ls -la
           git config --global user.email "gitlab-ci@example.com"
           git config --global user.name "GitLab CI"
+          git switch -c master
           cd ../
           rsync -avh kubernetes_wp/ kubernetes_wp_clone/ --delete --exclude=.git
           cd kubernetes_wp_clone/
-          git switch -c master
           echo "Adding files"
           git add .
           git status
