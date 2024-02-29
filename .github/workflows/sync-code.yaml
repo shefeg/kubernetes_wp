@@ -15,7 +15,7 @@ jobs:
           ls -la
           git config --global user.email "gitlab-ci@example.com"
           git config --global user.name "GitLab CI"
-          cd ../kubernetes_wp
+          cd ../
           rsync -avh kubernetes_wp/ kubernetes_wp_clone/ --delete
           cd kubernetes_wp_clone/
           ls -la
