@@ -20,8 +20,10 @@ jobs:
           cd kubernetes_wp_clone/
           echo "kubernetes_wp_clone content"
           ls -la
-          git checkout main
+          git status
           echo "Adding files"
           git add .
+          git status
           git commit -m "changes for $(date +%F)"
+          git status
           git push -f
