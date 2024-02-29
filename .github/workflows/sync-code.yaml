@@ -18,7 +18,10 @@ jobs:
           cd ../
           rsync -avh kubernetes_wp/ kubernetes_wp_clone/ --delete
           cd kubernetes_wp_clone/
+          echo "kubernetes_wp_clone content"
           ls -la
+          git checkout main
+          echo "Adding files"
           git add .
           git commit -m "changes for $(date +%F)"
           git push -f
