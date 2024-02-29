@@ -20,6 +20,7 @@ jobs:
           cd kubernetes_wp_clone/
           echo "kubernetes_wp_clone content"
           ls -la
+          echo "i am here $(pwd)"
           git status
           echo "Adding files"
           git add .
