@@ -1,0 +1,25 @@
+name: sync-code
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync
+        run: |
+          git clone https://github.com/shefeg/kubernetes_wp_clone.git
+          cd kubernetes_wp_clone/
+          ls -la
+          git config --global user.email "gitlab-ci@example.com"
+          git config --global user.name "GitLab CI"
+          cd ../
+          rsync -avh kubernetes_wp/ kubernetes_wp_clone/ --delete
+          cd kubernetes_wp_clone/
+          ls -la
+          git add .
+          git commit -m "changes for $(date +%F)"
+          git push -f
